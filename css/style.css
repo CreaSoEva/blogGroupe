@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+html{
+	width: 100%;
+	font-family: 'Quicksand', sans-serif;
+	background-color: black;
+	margin: 0;
+	padding: 0;
+}
+body{
+	width: 65%;
+	margin: auto;
+	background-color: white;
+	padding-left: 2%;
+	padding-right: 2%;
+}
+h1{
+	font-family: 'Anton', sans-serif;
+}
+header{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
