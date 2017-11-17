@@ -4,22 +4,55 @@
 html{
 	width: 100%;
 	font-family: 'Quicksand', sans-serif;
-	background-color: black;
+	background-color: white;
 	margin: 0;
 	padding: 0;
 }
 body{
-	width: 65%;
+	width: 60%;
 	margin: auto;
-	background-color: white;
+	margin-top: 1%;
 	padding-left: 2%;
 	padding-right: 2%;
 }
-h1{
+h1,h2,h3,h4,h5,h6{
 	font-family: 'Anton', sans-serif;
+}
+h1{
+	text-align: center;
 }
 header{
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: space-between;
+}
+header img{
+	width: 85%;
+}
+aside{
+	position: fixed;
+	right: 3%;
+	padding: 1%;
+	background-color: white;
+	border: solid 1px black;
+}
+ul{
+	list-style-type: none;
+}
+.gras{
+	font-weight: bold;
+}
+section{
+	width: 100%;
+}
+article{
+	width: 90%;
+	text-align: justify;
+	border: solid 1px black;
+	margin-top: 1%;
+	padding: 1%;
+}
+.inline{
+	display: inline-block;
+	margin-right: 2%;
 }
