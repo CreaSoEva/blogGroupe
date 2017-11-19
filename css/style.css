@@ -25,7 +25,7 @@ h1{
 header{
 	display: flex;
 	flex-wrap: nowrap;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 header img{
 	width: 85%;
@@ -83,4 +83,53 @@ form{
 	border: solid 1px black;
 	padding: 1%;
 	text-align: center;
+}
+.disparait{
+	display: none;
+}
+.boutonmenu{
+	display: none;
+	float: right;
+}
+.imageheaderP{
+	display: none;
+}
+@media screen and (max-width: 1600px) {
+ aside{
+	position: relative;
+	left: 10%;
+	width: 30%;
+	padding: 1%;
+	background-color: white;
+	border: solid 1px black;
+}
+.asidegrand{
+		display: none;
+}
+.boutonmenu{
+	display: block;
+	float: right;
+}
+}
+@media screen and (max-width: 1000px) {
+body{
+		width: 100%;
+		margin-right: 10%;
+		padding: 0%;
+}
+section{
+	width: 90%;
+	margin: auto;
+}
+footer{
+	width: 95%;
+	margin: auto;
+}
+.imageheaderG{
+	display: none;
+}
+.imageheaderP{
+	display: block;
+	width: auto;
+}
 }

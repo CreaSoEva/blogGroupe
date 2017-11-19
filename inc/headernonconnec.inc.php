@@ -1,5 +1,6 @@
 <header>
-		<img src="../image/banniere.png">
+		<img src="../image/banniere.png" class="imageheaderG">
+		<img src="../image/logo.png" class="imageheaderP">
 		<ul>
 			<li><input type="text" name="user" placeholder="User"></li>
 			<li><input type="password" name="password" placeholder="Password"></li>

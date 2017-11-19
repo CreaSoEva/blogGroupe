@@ -10,14 +10,14 @@
 <body>
 	<!-- Header -->
 	<?php 
-	require_once "./inc/headerconnec.inc.php";
-	//require_once "./inc/headernonconnec.inc.php";
+	//require_once "./inc/headerconnec.inc.php";
+	require_once "./inc/headernonconnec.inc.php";
 	?>
 	<!-- Fin de header -->
 	<!-- Aside -->
 	<?php 
-	require_once "./inc/asideconnec.inc.php";
-	//require_once "./inc/asidenonconnec.inc.php";
+	//require_once "./inc/asideconnec.inc.php";
+	require_once "./inc/asidenonconnec.inc.php";
 	?>
 	<!-- Fin de aside -->
 	<!-- Section -->
