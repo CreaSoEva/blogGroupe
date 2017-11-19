@@ -9,41 +9,16 @@
 </head>
 <body>
 	<!-- Header -->
-	<header>
-		<img src="../image/banniere.png">
-		<p>Bonjour <span>Maxime</span><br/><br/>
-		<button>Déconnexion</button></p>
-	</header>
+	<?php 
+	require_once "./inc/headerconnec.inc.php";
+	//require_once "./inc/headernonconnec.inc.php";
+	?>
 	<!-- Fin de header -->
 	<!-- Aside -->
-	<aside>
-		<p class="gras">Écrire un nouvel article</p>
-		<hr color="black">
-		<p class="gras">Catégorie:</p>
-		<ul>
-			<li>- Alcool fort</li>
-			<li>- Vin</li>
-			<li>- Champagne</li>
-		</ul>
-		<hr color="black">
-		<p class="gras">Derniers articles parus:</p>
-		<ul>
-			<li>- Mercurey par Maxime</li>
-			<li>- Lanson par Sébastien</li>
-			<li>-Whisky par Sophie</li>
-		</ul>
-		<hr color="black">
-		<p class="gras">Derniers commentaires:</p>
-		<ul>
-			<li>- Sophie sur Lanson</li>
-			<li>- Maxime sur Whisky</li>
-		</ul>
-		<hr color="black">
-		<p class="gras">Mes articles:</p>
-		<ul>
-			<li>- Whisky</li>
-		</ul>
-	</aside>
+	<?php 
+	require_once "./inc/asideconnec.inc.php";
+	//require_once "./inc/asidenonconnec.inc.php";
+	?>
 	<!-- Fin de aside -->
 	<!-- Section -->
 	<section>
@@ -83,8 +58,10 @@
 			<button class="inline">Modifier</button><button class="inline">Supprimer</button>
 		</article>
 	</section>
-
-
+	<!--Fin de section -->
+<?php 
+	require_once "./inc/footer.inc.php";
+?>
 
 
 </body>
