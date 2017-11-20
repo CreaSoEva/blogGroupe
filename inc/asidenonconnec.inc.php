@@ -20,7 +20,7 @@
 		</ul>
 </aside>
 
-<img src="../image/menu.png" id="menunonconnecmini" class="boutonmenu">
+<img src="./image/menu.png" id="menunonconnecmini" class="boutonmenu">
 <aside id="asidenonconnecmini" class="disparait">
 		<p class="gras"><a href="#">Écrire un nouvel article</a></p>
 		<hr color="black">
