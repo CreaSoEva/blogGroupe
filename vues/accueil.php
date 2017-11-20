@@ -11,7 +11,7 @@
 <body>
 <!-- Header et aside -->
 <?php 
-	if (isset($_SESSION['connexion'])){
+	if (isset($_SESSION['id'])){
 		require_once "./inc/headerconnec.inc.php";
 		require_once "./inc/asideconnec.inc.php";
 	}else{

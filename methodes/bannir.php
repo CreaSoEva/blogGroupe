@@ -1,5 +1,5 @@
 <?php
-if (isset($_SESSION['connexion'])) {
+if (isset($_SESSION['id'])) {
 	$id = $_GET['id'];
 	$user = $_GET['user'];
 	$email = $_GET['email'];

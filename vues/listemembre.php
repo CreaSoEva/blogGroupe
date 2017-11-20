@@ -26,7 +26,6 @@
     		<th>Id</th>
     		<th>User</th>
     		<th>Mail</th>
-
     	</tr>
     	<tr>
     		<td><?php echo $donnees['id_client']; ?></td>
