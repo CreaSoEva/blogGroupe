@@ -1,3 +1,10 @@
+<?php session_start(); 
+try{
+		$bdd = new PDO('mysql:host=localhost;dbname=bloggroupe', 'root', '');
+	}
+	catch(Exception $e){
+		die('Erreur : '.$e->getMessage());
+	}?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,20 +29,35 @@
 	<!-- Fin de aside -->
 	<!-- Section -->
 	<section>
-		<form class="form">
+		<form class="form" method="POST">
 			<label>Titre:</label><br/>
 			<input type="text" name="titre"><br/><br/>
-			<select id="choixcate">
-				<option value="alcoolfort">Alcool fort</option> 
-  				<option value="vin">Vin</option>
-  				<option value="champagne">Champagne</option>
+			<?php
+			require_once '../methodes/classcategorie.php';
+			require_once '../methodes/classcategorieManager.php'; 
+			$choux = new CategorieManager($bdd);
+			$zoubida=$choux->getListeCategories();
+			?>
+			<select name="categorie" id="choixcate">
+				<?php
+					foreach ($zoubida as $cat) {
+						echo "<option value=\"".$cat->getIdCategorie()."\">".$cat->getNom()."</option>";
+					}
+				?>
 			</select><br/><br/>
 			<label>Contenu</label><br/>
-			<textarea></textarea><br/><br/>
+			<textarea name="contenu"></textarea><br/><br/>
 			<input type="submit" name="publier" value="Publier">
 		</form>
 
+<?php
+require_once '../methodes/article_class.php';
+require_once '../methodes/article_class_management.php';
+$art = new ArticleManager($bdd);
+$art->add();
 
+
+?>
 
 
 	</section>
@@ -45,6 +67,7 @@
 
 	<!--Fin de section -->
 <?php 
+	
 	require_once "../inc/footer.inc.php";
 ?>
 
