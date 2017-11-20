@@ -1,5 +1,5 @@
 <aside id="asideconnec" class="asidegrand">
-		<p class="gras"><a href="#">Écrire un nouvel article</a></p>
+		<p class="gras"><a href="?page=creation">Écrire un nouvel article</a></p>
 		<hr color="black">
 		<p class="gras">Catégorie:</p>
 		<ul>
