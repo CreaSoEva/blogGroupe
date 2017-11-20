@@ -1,6 +1,6 @@
 <header>
-		<img src="../image/banniere.png" class="imageheaderG">
-		<img src="../image/logo.png" class="imageheaderP">
+		<img src="./image/banniere.png" class="imageheaderG">
+		<img src="./image/logo.png" class="imageheaderP">
 		<ul>
 			<form method="POST" action="?page=connexion">
 			<li><input type="text" name="user" placeholder="User"></li>

@@ -27,7 +27,7 @@
 		</ul>
 </aside>
 
-<img src="../image/menu.png" id="menuconnecmini" class="boutonmenu">
+<img src="./image/menu.png" id="menuconnecmini" class="boutonmenu">
 <aside id="asideconnecmini" class="disparait">
 		<p class="gras"><a href="#">Écrire un nouvel article</a></p>
 		<hr color="black">
