@@ -31,29 +31,39 @@
 		$user = $_POST["nom"];
 		$password = MD5($_POST["motdepasse"]);
 		$email= $_POST["mail"];
-		// if($bdd->("SELECT EXISTS( SELECT * FROM user WHERE email= ".$email." ) AS email_exists;"))
-
-		$req = $bdd->prepare('INSERT INTO user(user, password, email) VALUES(:user, :password, :email)');
-		$req->execute(array(
-			'user' => $user,
-			'password' => $password,
-			'email' => $email
-			));
-		//connexion après inscription
-		if (isset($user) && isset($_POST["motdepasse"])) {
-		require_once "./methodes/usermanager.php";
-		require_once "./methodes/user.php";
-		$usersquery = new UserManager($bdd);
-		$user = $usersquery->getUser($user, $_POST["motdepasse"]);
-		// si les données sont juste
-			if($user){
-				$_SESSION['connexion'] = 'oui';
-				$_SESSION['id'] = $user->getIdClient();
-				$_SESSION['nom'] = $user->getUser();
-				$_SESSION['email'] = $user->getEmail();
-				header("Location: index.php");
-			}
+		$query = $bdd->query("SELECT id FROM user WHERE email = '$email'");
+		var_dump($query);
+		if($query == 1){
+		   // Pseudo déjà utilisé
+		   echo 'Ce pseudo est déjà utilisé';
+		}else{
+		   // Pseudo libre
+		  echo 'Ce pseudo est libre';
 		}
+		// if ($dn== 0){
+		// 	$req = $bdd->prepare('INSERT INTO user(user, password, email) VALUES(:user, :password, :email)');
+		// 	$req->execute(array(
+		// 		'user' => $user,
+		// 		'password' => $password,
+		// 		'email' => $email
+		// 		));
+		// 		//connexion après inscription
+		// 	if (isset($user) && isset($_POST["motdepasse"])) {
+		// 	require_once "./methodes/usermanager.php";
+		// 	require_once "./methodes/user.php";
+		// 	$usersquery = new UserManager($bdd);
+		// 	$user = $usersquery->getUser($user, $_POST["motdepasse"]);
+		// 		// si les données sont juste
+		// 		if($user){
+		// 			$_SESSION['id'] = $user->getIdClient();
+		// 			$_SESSION['nom'] = $user->getUser();
+		// 			$_SESSION['email'] = $user->getEmail();
+		// 			header("Location: index.php");
+		// 		}
+		// 	}
+		// }else{
+		// 	echo "L'email existe déjà";
+		// }
 	}
 ?>
 	<!--Fin de section -->

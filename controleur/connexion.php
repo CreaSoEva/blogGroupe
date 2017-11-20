@@ -7,7 +7,6 @@ if (isset($_POST['user']) && isset($_POST['password'])) {
 	$user = $usersquery->getUser($_POST['user'], $_POST['password']);
 	// si les données sont juste
 	if($user){
-		$_SESSION['connexion'] = 'oui';
 		$_SESSION['id'] = $user->getIdClient();
 		$_SESSION['nom'] = $user->getUser();
 		$_SESSION['email'] = $user->getEmail();

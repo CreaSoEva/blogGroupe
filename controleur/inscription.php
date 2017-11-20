@@ -1,5 +1,5 @@
 <?php 
-	if (isset($_SESSION['connexion'])) {
+	if (isset($_SESSION['id'])) {
 		header("Location: index.php");
 	}else{
 		require_once "./vues/inscription.php";
