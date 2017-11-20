@@ -15,7 +15,6 @@
 		$_SESSION['connexion'] = $user->getuser();
 		require_once "./inc/headernonconnec.inc.php";
 		require_once "./inc/asidenonconnec.inc.php";
-		require_once('classcategorie.php');
-		require_once('classcategorieManager.php');
+		
 	}
 ?>
