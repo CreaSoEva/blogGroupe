@@ -25,6 +25,8 @@
 		<ul>
 			<li><a href="#">- Whisky</a></li>
 		</ul>
+		<hr color="black">
+		<p><a href="?page=listemembre">Liste des membres</p>
 </aside>
 
 <img src="./image/menu.png" id="menuconnecmini" class="boutonmenu">
