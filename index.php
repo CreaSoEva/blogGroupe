@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Blog  des alcooliques</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script type="text/javascript" src="../js/script.js"></script>
-</head>
-<body>
-	
 <?php
 	//Ouvrir la session
 	session_start();
@@ -21,8 +10,14 @@
 	}
 	//Affichage sur la page
 	if (empty($_GET["page"])){
-		require_once "controleur/accueil.php";
+		require_once "vues/accueil.php";
 	}else{
+		if ($_GET['page'] == 'connexion') {
+				require_once "controleur/connexion.php";
+		}
+		if ($_GET['page'] == 'deconnexion') {
+			require_once "controleur/deconnexion.php";
+		}
 		if ($_GET['page'] == 'categorie') {
 				require_once "controleur/categorie.php";
 			}
@@ -43,7 +38,3 @@
 		}
 	}
 ?>
-
-
-</body>
-</html>

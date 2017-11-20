@@ -1,15 +1,24 @@
-<!-- Header -->
-	<?php 
-	//require_once "./inc/headerconnec.inc.php";
-	require_once "./inc/headernonconnec.inc.php";
-	?>
-	<!-- Fin de header -->
-	<!-- Aside -->
-	<?php 
-	//require_once "./inc/asideconnec.inc.php";
-	require_once "./inc/asidenonconnec.inc.php";
-	?>
-	<!-- Fin de aside -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog  des alcooliques</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+<!-- Header et aside -->
+<?php 
+	if (isset($_SESSION['connexion'])){
+		require_once "./inc/headerconnec.inc.php";
+		require_once "./inc/asideconnec.inc.php";
+	}else{
+		require_once "./inc/headernonconnec.inc.php";
+		require_once "./inc/asidenonconnec.inc.php";
+	}
+?>
+	<!-- Header et aside -->
 	<!-- Section -->
 	<section>
 			<h1>Derniers articles</h1>
@@ -52,3 +61,7 @@
 	<?php 
 	require_once "./inc/footer.inc.php";
 ?>
+
+
+</body>
+</html>
