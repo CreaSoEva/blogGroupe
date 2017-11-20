@@ -7,12 +7,12 @@ class CategorieManager{
 		$this->setBdd($bdd);
 	}
 
-	public function getListeCategorie(){
+	public function getListeCategories(){
 			$categories = [];
 
 			$req = $this->_bdd->prepare('SELECT * FROM `bloggroupe`.`categorie`;');
 			$req->execute();
-			while($donnees = $req->fetch_assoc()){
+			while($donnees = $req->fetch()){
 				$categories[] = new Categorie($donnees);
 			}
 			return $categories;

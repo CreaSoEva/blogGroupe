@@ -7,6 +7,7 @@ class Categorie{
     public function __construct($donnees){
         $this->setIdCategorie($donnees['id_categorie']);
         $this->setNom($donnees['nom']);
+    }
 
     public function getIdCategorie(){
         return $this->_id_categorie;

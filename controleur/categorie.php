@@ -1,17 +1,21 @@
 <?php
-	include "methodes/classcategorieQuery.php";
+	include "methodes/classcategorieManager.php";
 	include "methodes/classcategorie.php";
-
-	$categorieManager = new classcategorieManager($bdd);
-	$categorie = $categorieManager->getcategorie($_POST['id_categorie'], $_POST['nom']);
+	
+	$liste = = new classcategorieManager($bdd);
+    $listeCategorie = $liste->getListeCategories();
 
 	if($categorie){
 		$_SESSION['connexion'] = $user->getuser();
 		require_once "./inc/headerconnec.inc.php";
 		require_once "./inc/asideconnec.inc.php";
+		require_once('classcategorie.php');
+		require_once('classcategorieManager.php');
 	}else{
 		$_SESSION['connexion'] = $user->getuser();
 		require_once "./inc/headernonconnec.inc.php";
 		require_once "./inc/asidenonconnec.inc.php";
+		require_once('classcategorie.php');
+		require_once('classcategorieManager.php');
 	}
 ?>
