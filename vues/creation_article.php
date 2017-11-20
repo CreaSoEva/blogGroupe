@@ -22,7 +22,7 @@
 	<!-- Fin de aside -->
 	<!-- Section -->
 	<section>
-		<form>
+		<form class="form">
 			<label>Titre:</label><br/>
 			<input type="text" name="titre"><br/><br/>
 			<select id="choixcate">

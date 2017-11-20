@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,18 +8,17 @@
 	<script type="text/javascript" src="../js/script.js"></script>
 </head>
 <body>
-	<!-- Header -->
-	<?php
-	//require_once "./inc/headerconnec.inc.php";
-	require_once "./inc/headernonconnec.inc.php";
-	?>
-	<!-- Fin de header -->
-	<!-- Aside -->
-	<?php 
-	//require_once "./inc/asideconnec.inc.php";
-	require_once "./inc/asidenonconnec.inc.php";
-	?>
-	<!-- Fin de aside -->
+<!-- Header et aside -->
+<?php 
+	if (isset($_SESSION['connexion'])){
+		require_once "./inc/headerconnec.inc.php";
+		require_once "./inc/asideconnec.inc.php";
+	}else{
+		require_once "./inc/headernonconnec.inc.php";
+		require_once "./inc/asidenonconnec.inc.php";
+	}
+?>
+	<!-- Header et aside -->
 	<!-- Section -->
 	<section>
 			<h1>Derniers articles</h1>
@@ -60,47 +58,10 @@
 		</article>
 	</section>
 	<!--Fin de section -->
-<?php 
+	<?php 
 	require_once "./inc/footer.inc.php";
-=======
-<?php
-	//Ouvrir la session
-	session_start();
-	//Connexion base de données
-	try{
-		$bdd = new PDO('mysql:host=localhost;dbname=bloggroupe', 'root', '');
-	}
-	catch(Exception $e){
-		die('Erreur : '.$e->getMessage());
-	}
-	//Affichage sur la page
-	if (empty($_GET["page"])){
-		require_once "vues/accueil.php";
-	}else{
-		if ($_GET['page'] == 'connexion') {
-				require_once "controleur/connexion.php";
-		}
-		if ($_GET['page'] == 'deconnexion') {
-			require_once "controleur/deconnexion.php";
-		}
-		if ($_GET['page'] == 'categorie') {
-				require_once "controleur/categorie.php";
-			}
-		if ($_GET['page'] == 'article') {
-			require_once "controleur/article.php";
-		}
-		if ($_GET['page'] == 'creation') {
-			require_once "controleur/creation.php";
-		}
-		if ($_GET['page'] == 'modification') {
-			require_once "controleur/modification.php";
-		}
-		if ($_GET['page'] == 'inscription') {
-		require_once "controleur/inscription.php";
-		}
-		if ($_GET['page'] == 'suppression') {
-		require_once "controleur/suppression.php";
-		}
-	}
->>>>>>> ff59270ccf9d9f7396abd2598c95e05def52a16d
 ?>
+
+
+</body>
+</html>
