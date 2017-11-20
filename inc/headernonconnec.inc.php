@@ -8,6 +8,6 @@
 			<li><button>Connexion</button></li><br/>
 			</form>
 			<li>Pas encore inscrit?</li>
-			<li><button>Inscription</button></li>
+			<li><button><a href="?page=inscription">Inscription</a></button></li>
 		</ul>
 </header>

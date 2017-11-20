@@ -16,7 +16,7 @@
 	<!-- Header et aside -->
 	<!-- Section -->
 	<section>
-			<form class="form">
+			<form class="form" method="POST" action="?page=inscription">
 			<label>Nom:</label><br/>
 			<input type="text" name="nom" required><br/><br/>
 			<label>Mot de passe:</label><br/>
@@ -26,6 +26,36 @@
 			<input type="submit" name="insription" value="S'inscrire">
 		</form>
 	</section>
+	<?php
+	if (isset($_POST["nom"]) && isset($_POST["motdepasse"]) && isset($_POST["mail"])){
+		$user = $_POST["nom"];
+		$password = MD5($_POST["motdepasse"]);
+		$email= $_POST["mail"];
+		// if($bdd->("SELECT EXISTS( SELECT * FROM user WHERE email= ".$email." ) AS email_exists;"))
+
+		$req = $bdd->prepare('INSERT INTO user(user, password, email) VALUES(:user, :password, :email)');
+		$req->execute(array(
+			'user' => $user,
+			'password' => $password,
+			'email' => $email
+			));
+		//connexion après inscription
+		if (isset($user) && isset($_POST["motdepasse"])) {
+		require_once "./methodes/usermanager.php";
+		require_once "./methodes/user.php";
+		$usersquery = new UserManager($bdd);
+		$user = $usersquery->getUser($user, $_POST["motdepasse"]);
+		// si les données sont juste
+			if($user){
+				$_SESSION['connexion'] = 'oui';
+				$_SESSION['id'] = $user->getIdClient();
+				$_SESSION['nom'] = $user->getUser();
+				$_SESSION['email'] = $user->getEmail();
+				header("Location: index.php");
+			}
+		}
+	}
+?>
 	<!--Fin de section -->
 	<?php 
 	require_once "./inc/footer.inc.php";
