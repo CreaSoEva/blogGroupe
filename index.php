@@ -9,7 +9,7 @@
 </head>
 <body>
 	<!-- Header -->
-	<?php 
+	<?php
 	//require_once "./inc/headerconnec.inc.php";
 	require_once "./inc/headernonconnec.inc.php";
 	?>
