@@ -31,7 +31,7 @@ if (isset($_SESSION['id'])) {
 			<select name="categorie" id="choixcate">
 				<?php
 					foreach ($zoubida as $cat) {
-						echo "<option value=\"".$cat->getIdCategorie()."\">".$cat->getNom()."</option>";
+						echo "<option value=\"".$cat->getNom()."\">".$cat->getNom()."</option>";
 					}
 				?>
 			</select><br/><br/>
