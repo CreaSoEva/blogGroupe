@@ -39,7 +39,7 @@ class ArticleManager{
 	{
 	        $art = [];
 
-    $q = $this->_bdd->query('SELECT id_article, id_categorie, id_client, titre, contenu, date FROM article ORDER BY date');
+    $q = $this->_bdd->query('SELECT id_article, id_categorie, id_client, titre, contenu, date FROM article ORDER BY date DESC LIMIT 3');
 
     while ($donne = $q->fetch(PDO::FETCH_ASSOC))
     {
