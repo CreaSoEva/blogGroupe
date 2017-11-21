@@ -52,7 +52,7 @@
 				}
 				echo "</article>";
 			}							
-			 		}if ($url == "Vin"){
+			 		}if ($url == "Vins"){
 							echo "<h1>$url</h1>";
 							foreach ($user as $key => $value) {
 							echo "<article>";

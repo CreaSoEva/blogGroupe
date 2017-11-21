@@ -2,7 +2,7 @@
 		<p class="gras">Catégorie:</p>
 		<ul>
 			<li><a href="?page=categorie&valeur=Alcools Forts">- Alcools Forts</a></li>
-			<li><a href="?page=categorie&valeur=Vin">- Vin</a></li>
+			<li><a href="?page=categorie&valeur=Vins">- Vins</a></li>
 			<li><a href="?page=categorie&valeur=Champagne">- Champagne</a></li>
 		</ul>
 		<hr color="black">
