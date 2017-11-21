@@ -4,7 +4,7 @@ if (isset($_SESSION['id'])) {
 	<!DOCTYPE html>
 <html>
 <head>
-	<title>Création d'article</title>
+	<title>Modification d'article</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -46,8 +46,8 @@ if (isset($_POST["titre"])) {
 	require_once './methodes/article_class.php';
 	require_once './methodes/article_class_management.php';
 	$usersquery = new ArticleManager($bdd);
-	$user = $usersquery->update($titremodif, $contenumodif, $idmodif);
-	// header("Location: index.php");
+	$user = $usersquery->update($titremodif, $contenumodif, $idmodif, $bdd);
+	header("Location: index.php");
 }
 
 ?>
