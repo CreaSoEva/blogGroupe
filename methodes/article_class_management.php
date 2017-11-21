@@ -67,20 +67,16 @@ public function getListclasse($url)
 
 
 
-	public function update(Article $art)
+	public function update($titremodif, $contenumodif, $idmodif)
 	{
-    $q = $this->_bdd->prepare('UPDATE article SET id_article = :id_article, id_categorie = :id_categorie, id_client = :id_client, titre = :titre, contenu = :contenu, date = :date WHERE id_article = :id_article');
+    $q = $this->_bdd->prepare('UPDATE article SET titre = :titre, contenu = :contenu WHERE id_article = :id_article');
+    $q->execute(array(
+        'titre' => $titremodif,
+        'contenu' => $contenumodif,
+        'id_article ' => $idmodif
+    ));
 
-    $q->bindValue(':id_article', $art->id_article());
-    $q->bindValue(':id_categorie', $art->id_categorie());
-    $q->bindValue(':id_client', $art->id_client());
-    $q->bindValue(':titre', $art->titre());
-    $q->bindValue(':contenu', $art->contenu());
-    $q->bindValue(':date', $art->date());
-
-    $q->execute();
-  
-	}
+    }
 
 	public function setBdd(PDO $bdd)
 	{
