@@ -1,6 +1,6 @@
 <?php
-require_once '../methodes/classcategorie.php';
-require_once '../methodes/classcategorieManager.php';
+require_once './methodes/classcategorie.php';
+require_once './methodes/classcategorieManager.php';
 
 try{
 	$bdd = new PDO('mysql:host=localhost;dbname=bloggroupe', 'root', '');
@@ -12,5 +12,5 @@ catch(Exception $e){
 $cm = new CategorieManager($bdd);
 $liste = $cm->getListeCategories();
 
-require_once "../vues/categorie.php";
+require_once "./vues/categorie.php";
 ?>

@@ -20,7 +20,7 @@ class ArticleManager{
             return $article;
 	}
 
-	public function delete(Article $art)
+	public function delete($art)
 	{
 	    $this->_bdd->exec('DELETE FROM article WHERE id_article = '.$art->id());
 	}
@@ -48,6 +48,23 @@ class ArticleManager{
 
     return $art;
 	}
+
+
+public function getListclasse()
+	{
+	        $art = [];
+
+    $q = $this->_bdd->query('SELECT id_article, id_categorie, id_client, titre, contenu, date FROM article ORDER BY id_categorie,date');
+
+    while ($donne = $q->fetch(PDO::FETCH_ASSOC))
+    {
+      $art[] =$donne;
+    }
+
+    return $art;
+	}
+
+
 
 	public function update(Article $art)
 	{

@@ -18,8 +18,13 @@ class CategorieManager{
 			return $categories;
 	}
 
-	public function getCategorie(int $id) {
-
+	public function getCategorie($id) {
+		    $id = $id;
+			$req = $this->_bdd->prepare('SELECT nom FROM categorie WHERE id_categorie =' .$id);
+			$req->execute();
+			$donnees = $req->fetch();
+			return $donnees;
+			
 	}
 
 	public function getBdd()
