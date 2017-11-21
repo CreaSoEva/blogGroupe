@@ -54,7 +54,7 @@ public function getListclasse($url)
 	{
 	        $art = [];
 
-    $q = $this->_bdd->prepare("SELECT id_article, id_categorie, id_client, titre, contenu, date FROM article WHERE id_categorie=? ORDER BY date" );
+    $q = $this->_bdd->prepare("SELECT id_article, id_categorie, id_client, titre, contenu, date FROM article WHERE id_categorie=? ORDER BY date DESC LIMIT 3" );
     $q->execute(array($url));
 
     while ($donne = $q->fetch(PDO::FETCH_ASSOC))
