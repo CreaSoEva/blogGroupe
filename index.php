@@ -34,8 +34,8 @@
 		if ($_GET['page'] == 'inscription') {
 		require_once "controleur/inscription.php";
 		}
-		if ($_GET['page'] == 'suppression') {
-		require_once "controleur/suppression.php";
+		if ($_GET['page'] == 'supprimer') {
+		require_once "controleur/supprimer.php";
 		}
 		if ($_GET['page'] == 'listemembre') {
 		require_once "controleur/listemembre.php";

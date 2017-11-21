@@ -22,7 +22,7 @@ class ArticleManager{
 
 	public function delete($art)
 	{
-	    $this->_bdd->exec('DELETE FROM article WHERE id_article = '.$art->id());
+	    $this->_bdd->exec('DELETE FROM article WHERE id_article = '.$art);
 	}
 
 	public function get($id)
