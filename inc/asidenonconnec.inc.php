@@ -1,7 +1,7 @@
 <aside id="asidenonconnec" class="asidegrand">
 		<p class="gras">Catégorie:</p>
 		<ul>
-			<li><a href="?page=categorie&valeur=Alcool fort">- Alcool fort</a></li>
+			<li><a href="?page=categorie&valeur=Alcools Forts">- Alcools Forts</a></li>
 			<li><a href="?page=categorie&valeur=Vin">- Vin</a></li>
 			<li><a href="?page=categorie&valeur=Champagne">- Champagne</a></li>
 		</ul>

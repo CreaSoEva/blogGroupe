@@ -50,11 +50,12 @@ class ArticleManager{
 	}
 
 
-public function getListclasse()
+public function getListclasse($url)
 	{
 	        $art = [];
 
-    $q = $this->_bdd->query('SELECT id_article, id_categorie, id_client, titre, contenu, date FROM article ORDER BY id_categorie,date');
+    $q = $this->_bdd->prepare("SELECT id_article, id_categorie, id_client, titre, contenu, date FROM article WHERE id_categorie=? ORDER BY date" );
+    $q->execute(array($url));
 
     while ($donne = $q->fetch(PDO::FETCH_ASSOC))
     {

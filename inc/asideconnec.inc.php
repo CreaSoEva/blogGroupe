@@ -3,9 +3,9 @@
 		<hr color="black">
 		<p class="gras">Catégorie:</p>
 		<ul>
-			<li><a href="#">- Alcool fort</a></li>
-			<li><a href="#">- Vin</a></li>
-			<li><a href="#">- Champagne</a></li>
+			<li><a href="?page=categorie&valeur=Alcools Forts">- Alcools Forts</a></li>
+			<li><a href="?page=categorie&valeur=Vin">- Vin</a></li>
+			<li><a href="?page=categorie&valeur=Champagne">- Champagne</a></li>
 		</ul>
 		<hr color="black">
 		<p class="gras">Derniers articles parus:</p>
