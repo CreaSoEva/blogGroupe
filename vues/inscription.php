@@ -37,6 +37,7 @@
 		$user = $usersquery->userExists($email);
 			if ($user == false) {
 				$user = $usersquery->createUser($user1, $password, $email);
+				header("Location: index.php");
 			}else{
 				echo "Email déjà renseigné";
 			}

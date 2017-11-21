@@ -30,9 +30,9 @@ class ArticleManager{
 	        $id = (int) $id;
 
     $q = $this->_bdd->query('SELECT id_article, id_categorie, id_client, titre, contenu, date FROM article WHERE id_article = '.$id);
-    $donnees = $q->fetch(PDO::FETCH_ASSOC);
+    $donne = $q->fetch(PDO::FETCH_ASSOC);
 
-    return new Article($donnees);
+    return new Article($donne);
 	}
 
 	public function getList()
@@ -41,9 +41,9 @@ class ArticleManager{
 
     $q = $this->_bdd->query('SELECT id_article, id_categorie, id_client, titre, contenu, date FROM article ORDER BY date');
 
-    while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
+    while ($donne = $q->fetch(PDO::FETCH_ASSOC))
     {
-      $art[] = new Article($donnees);
+      $art[] =$donne;
     }
 
     return $art;
