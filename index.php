@@ -28,8 +28,8 @@
 		if ($_GET['page'] == 'creation') {
 			require_once "controleur/creation.php";
 		}
-		if ($_GET['page'] == 'modification') {
-			require_once "controleur/modification.php";
+		if ($_GET['page'] == 'modifier') {
+			require_once "controleur/modifier.php";
 		}
 		if ($_GET['page'] == 'inscription') {
 		require_once "controleur/inscription.php";

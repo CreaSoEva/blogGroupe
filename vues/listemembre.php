@@ -1,3 +1,6 @@
+<?php 
+if ($_SESSION['id'] == 1){
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,7 +47,10 @@
 	<?php 
 	require_once "./inc/footer.inc.php";
 ?>
-
-
 </body>
 </html>
+<?php
+}else{
+	header("Location: index.php");
+}
+?>
