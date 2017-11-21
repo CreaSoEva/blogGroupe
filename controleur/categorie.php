@@ -1,20 +1,16 @@
 <?php
-	include "methodes/classcategorieManager.php";
-	include "methodes/classcategorie.php";
-	
-	$liste = = new classcategorieManager($bdd);
-    $listeCategorie = $liste->getListeCategories();
+require_once '../methodes/classcategorie.php';
+require_once '../methodes/classcategorieManager.php';
 
-	if($categorie){
-		$_SESSION['connexion'] = $user->getuser();
-		require_once "./inc/headerconnec.inc.php";
-		require_once "./inc/asideconnec.inc.php";
-		require_once('classcategorie.php');
-		require_once('classcategorieManager.php');
-	}else{
-		$_SESSION['connexion'] = $user->getuser();
-		require_once "./inc/headernonconnec.inc.php";
-		require_once "./inc/asidenonconnec.inc.php";
-		
-	}
+try{
+	$bdd = new PDO('mysql:host=localhost;dbname=bloggroupe', 'root', '');
+}
+catch(Exception $e){
+	die('Erreur : '.$e->getMessage());
+}	
+
+$cm = new CategorieManager($bdd);
+$liste = $cm->getListeCategories();
+
+require_once "../vues/categorie.php";
 ?>
