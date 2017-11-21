@@ -28,43 +28,19 @@
 	</section>
 	<?php
 	if (isset($_POST["nom"]) && isset($_POST["motdepasse"]) && isset($_POST["mail"])){
-		$user = $_POST["nom"];
+		$user1 = $_POST["nom"];
 		$password = MD5($_POST["motdepasse"]);
 		$email= $_POST["mail"];
-		$query = $bdd->query("SELECT id FROM user WHERE email = '$email'");
-		var_dump($query);
-		if($query == 1){
-		   // Pseudo déjà utilisé
-		   echo 'Ce pseudo est déjà utilisé';
-		}else{
-		   // Pseudo libre
-		  echo 'Ce pseudo est libre';
+		require_once "./methodes/usermanager.php";
+		require_once "./methodes/user.php";
+		$usersquery = new UserManager($bdd);
+		$user = $usersquery->userExists($email);
+			if ($user == false) {
+				$user = $usersquery->createUser($user1, $password, $email);
+			}else{
+				echo "Email déjà renseigné";
+			}
 		}
-		// if ($dn== 0){
-		// 	$req = $bdd->prepare('INSERT INTO user(user, password, email) VALUES(:user, :password, :email)');
-		// 	$req->execute(array(
-		// 		'user' => $user,
-		// 		'password' => $password,
-		// 		'email' => $email
-		// 		));
-		// 		//connexion après inscription
-		// 	if (isset($user) && isset($_POST["motdepasse"])) {
-		// 	require_once "./methodes/usermanager.php";
-		// 	require_once "./methodes/user.php";
-		// 	$usersquery = new UserManager($bdd);
-		// 	$user = $usersquery->getUser($user, $_POST["motdepasse"]);
-		// 		// si les données sont juste
-		// 		if($user){
-		// 			$_SESSION['id'] = $user->getIdClient();
-		// 			$_SESSION['nom'] = $user->getUser();
-		// 			$_SESSION['email'] = $user->getEmail();
-		// 			header("Location: index.php");
-		// 		}
-		// 	}
-		// }else{
-		// 	echo "L'email existe déjà";
-		// }
-	}
 ?>
 	<!--Fin de section -->
 	<?php 

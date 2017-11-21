@@ -46,6 +46,7 @@ if (isset($_POST["categorie"])) {
 	require_once './methodes/article_class_management.php';
 	$art = new ArticleManager($bdd);
 	$art->add();
+	header("Location: index.php");
 }
 
 
