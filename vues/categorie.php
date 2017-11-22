@@ -35,6 +35,7 @@
 			$articlequery = new ArticleManager($bdd);
 			$article = $articlequery->getListclasse($url);			
 			$um = new UserManager($bdd);
+			var_dump($article);
 			
 
 			// <!-- si la valeur dans mon url est la valeur alcool fort, alors on va appele tous les articles de la categorie alcool fort -->

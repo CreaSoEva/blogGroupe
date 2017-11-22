@@ -26,8 +26,8 @@
 	<section>
 			<h1>Derniers articles</h1>
 			<?php
-			require_once './methodes/classcategorie.php';
-			require_once './methodes/classcategorieManager.php';
+			require_once "./methodes/classcategorie.php";
+			require_once "./methodes/classcategorieManager.php";
 			require_once "./methodes/article_class_management.php";
 			require_once "./methodes/user.php";
 			require_once "./methodes/usermanager.php";
