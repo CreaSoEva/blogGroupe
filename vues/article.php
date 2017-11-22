@@ -50,7 +50,7 @@
 				// require_once './methodes/article_class_management.php';
 				// $art = new ArticleManager($bdd);
 				// $art->add();
-					echo "test reussi";
+					echo "test ";
 }
 			?>
 	</section>
