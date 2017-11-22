@@ -32,7 +32,7 @@ class ArticleManager{
     $q = $this->_bdd->query('SELECT id_article, id_categorie, id_client, titre, contenu, date FROM article WHERE id_article = '.$id);
     $donne = $q->fetch(PDO::FETCH_ASSOC);
 
-    return new Article($donne);
+    return $donne;
 	}
 
 	public function getList()

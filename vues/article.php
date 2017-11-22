@@ -22,25 +22,19 @@
 	<!-- Header et aside -->
 	<!-- Section -->
 	<section>
-			<h1>Derniers articles</h1>
+			<h1>Article:</h1>
 			<?php
+			$id = $_GET['value']; 
 			require_once "./methodes/article_class_management.php";
 			require_once "./methodes/article_class.php";
-			$usersquery = new ArticleManager($bdd);
-			$user = $usersquery->getList();
-			foreach ($user as $key => $value) {
-				echo "<article>";
-				echo "<p> Catégorie: ".$value['id_categorie']."</p>
-				<h3>".$value['titre']."</h3>
-				<p>".$value['id_client']." le ".$value['date']."</p>
-				<p>".$value['contenu']."</p>";
-				if (isset($_SESSION['id'])){
-					echo "<button><a href='?page=modifier&value=".$value['id_article']."'>Modifier</a></button><button><a href='?page=supprimer&value=".$value['id_article']."'>Supprimer</a></button>";
-				}
-				echo "<a href='?page=article&value=".$value['id_article']."'><span class='commentaire'>Commentaires<span></a>";
+			$artisolo = new ArticleManager($bdd);
+			$article = $artisolo->get($id);
+			echo "<article>";
+			echo "<p> Catégorie: ".$article['id_categorie']."</p>
+				<h3>".$article['titre']."</h3>
+				<p>".$article['id_client']." le ".$article['date']."</p>
+				<p>".$article['contenu']."</p>";
 				echo "</article>";
-			}
-			
 			?>
 	</section>
 	<!--Fin de section -->

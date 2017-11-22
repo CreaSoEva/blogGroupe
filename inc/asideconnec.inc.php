@@ -49,11 +49,19 @@
 		</ul>
 		<hr color="black">
 		<p class="gras">Derniers articles parus:</p>
-		<ul>
-			<li><a href="#">- Mercurey par Maxime</a></li>
-			<li><a href="#">- Lanson par Sébastien</a></li>
-			<li><a href="#">- Whisky par Sophie</a></li>
-		</ul>
+		<?php
+			require_once "./methodes/article_class_management.php";
+			require_once "./methodes/article_class.php";
+			$usersquery1 = new ArticleManager($bdd);
+			$user1 = $usersquery1->getList();
+				foreach ($user1 as $key => $value){
+				if($key < 3){
+					echo "<ul>";
+					echo "<li>- ".$value['titre']." par ".$value['id_client']."</li>";
+					echo "</ul>";
+				}
+			}	
+		?>
 		<hr color="black">
 		<p class="gras">Derniers commentaires:</p>
 		<ul>

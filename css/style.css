@@ -106,10 +106,10 @@ td{
 	color: blue;
 	vertical-align: top;
 }
-
-
-
-
+.commentaire{
+	color: blue;
+	margin-left: 70%;
+}
 
 @media screen and (max-width: 1600px) {
  aside{

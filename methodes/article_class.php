@@ -13,7 +13,7 @@ private $date;
 	{
 		$this->_id_categorie = ($donne['id_categorie']);
 		$this->_id_client = ($donne['id_client']);
-		$this->_titre = ($donne['titre ']);
+		$this->_titre = ($donne['titre']);
 		$this->_contenu = ($donne['contenu']);
 	}
 
