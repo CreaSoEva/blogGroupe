@@ -13,8 +13,8 @@ if (isset($_SESSION['id'])) {
 <body>
 	<!-- Header -->
 <?php 
-	require_once "./inc/headerconnec.inc.php";
-	require_once "./inc/asideconnec.inc.php";
+		require_once "./inc/header.inc.php";
+		require_once "./inc/aside.inc.php";
 ?>
 	<!-- Fin de aside -->
 	<!-- Section -->

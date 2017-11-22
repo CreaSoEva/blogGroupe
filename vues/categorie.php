@@ -11,13 +11,8 @@
 <body>
 	<!-- Header -->
 <?php 
-	if (isset($_SESSION['id'])){
-		require_once "./inc/headerconnec.inc.php";
-		require_once "./inc/asideconnec.inc.php";
-	}else{
-		require_once "./inc/headernonconnec.inc.php";
-		require_once "./inc/asidenonconnec.inc.php";
-	}
+		require_once "./inc/header.inc.php";
+		require_once "./inc/aside.inc.php";
 ?>
 	<!-- Header et aside -->
 	<!-- Section -->
@@ -34,9 +29,7 @@
 			echo "<h1>".$cat->getNom()."</h1>";
 			$articlequery = new ArticleManager($bdd);
 			$article = $articlequery->getListclasse($url);			
-			$um = new UserManager($bdd);
-			var_dump($article);
-			
+			$um = new UserManager($bdd);	
 
 			// <!-- si la valeur dans mon url est la valeur alcool fort, alors on va appele tous les articles de la categorie alcool fort -->
 
@@ -48,9 +41,9 @@
 				<p>".$auteur->getUser()." le ".$art->getDate()."</p>
 				<p>".$art->getContenu()."</p>";
 				if (isset($_SESSION['id'])){
-					echo "<button><a href='?page=modifier&value=".
-					getId_article()."'>Modifier</a></button> <button><a href='?page=supprimer&value=".$art->getId_article()."'>Supprimer</a></button>";
+					echo "<button><a href='?page=modifier&value=".$art->getId_article()."'>Modifier</a></button><button><a href='?page=supprimer&value=".$art->getId_article()."'>Supprimer</a></button>";
 				}
+				echo "<a href='?page=article&value=".$art->getId_article()."'><span class='commentaire'>Commentaires<span></a>";
 				echo "</article>";
 			}
 

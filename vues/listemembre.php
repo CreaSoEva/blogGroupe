@@ -13,8 +13,8 @@ if ($_SESSION['id'] == 1){
 <body>
 <!-- Header et aside -->
 <?php 
-		require_once "./inc/headerconnec.inc.php";
-		require_once "./inc/asideconnec.inc.php";
+		require_once "./inc/header.inc.php";
+		require_once "./inc/aside.inc.php";
 ?>
 	<!-- Header et aside -->
 	<!-- Section -->
