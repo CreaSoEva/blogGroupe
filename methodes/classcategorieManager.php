@@ -10,10 +10,10 @@ class CategorieManager{
 	public function getListeCategories(){
 			$categories = [];
 
-			$req = $this->_bdd->prepare('SELECT * FROM `bloggroupe`.`categorie`;');
+			$req = $this->_bdd->prepare('SELECT * FROM categorie');
 			$req->execute();
 			while($donnees = $req->fetch()){
-				$categories[] = $donnees;
+				$categories[] = new categorie($donnees);
 			}
 			return $categories;
 	}
@@ -23,7 +23,7 @@ class CategorieManager{
 			$req = $this->_bdd->prepare('SELECT * FROM categorie WHERE id_categorie =' .$id);
 			$req->execute();
 			$donnees = $req->fetch();
-			return new Categorie($donnees);
+			return new categorie($donnees);
 			
 	}
 

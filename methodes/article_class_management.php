@@ -30,7 +30,7 @@ class ArticleManager{
 	        $id = (int) $id;
 
     $q = $this->_bdd->query('SELECT id_article, id_categorie, id_client, titre, contenu, date FROM article WHERE id_article = '.$id);
-    $donne = $q->fetch(PDO::FETCH_ASSOC);
+    $donne = $q->fetch();
 
     return $donne;
 	}
@@ -45,6 +45,7 @@ class ArticleManager{
     {
       $art[] = new Article($donne);
     }
+
     return $art;
 	}
 
@@ -53,13 +54,12 @@ public function getListclasse($url)
 	{
 	        $art = [];
 
-    $q = $this->_bdd->prepare("SELECT * FROM `article` where  article.id_categorie=? ORDER BY date DESC LIMIT 6" );
-    
+    $q = $this->_bdd->prepare("SELECT * FROM article WHERE id_categorie=? ORDER BY date DESC LIMIT 6" );
     $q->execute(array($url));
 
     while ($donne = $q->fetch())
     {
-      $art[] = new Article($donne);
+      $art[] =new Article($donne);
     }
 
     return $art;
