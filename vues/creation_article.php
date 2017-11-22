@@ -25,13 +25,13 @@ if (isset($_SESSION['id'])) {
 			<?php
 			require_once './methodes/classcategorie.php';
 			require_once './methodes/classcategorieManager.php'; 
-			$choux = new CategorieManager($bdd);
-			$zoubida=$choux->getListeCategories();
+			$art = new CategorieManager($bdd);
+			$listes=$art->getListeCategories();
 			?>
 			<select name="categorie" id="choixcate">
 				<?php
-					foreach ($zoubida as $cat) {
-						echo "<option value=\"".$cat->getNom()."\">".$cat->getNom()."</option>";
+					foreach ($listes as $cat) {
+						echo "<option value=\"".$cat->getIdCategorie()."\">".$cat->getNom()."</option>";
 					}
 				?>
 			</select><br/><br/>

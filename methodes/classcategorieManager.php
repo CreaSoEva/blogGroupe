@@ -20,10 +20,10 @@ class CategorieManager{
 
 	public function getCategorie($id) {
 		    $id = $id;
-			$req = $this->_bdd->prepare('SELECT nom FROM categorie WHERE id_categorie =' .$id);
+			$req = $this->_bdd->prepare('SELECT * FROM categorie WHERE id_categorie =' .$id);
 			$req->execute();
 			$donnees = $req->fetch();
-			return $donnees;
+			return new Categorie($donnees);
 			
 	}
 

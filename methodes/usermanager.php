@@ -16,6 +16,15 @@ class UserManager{
             return $user;
     }
 
+    public function getUserById($id){
+        $req = $this->_bdd->prepare('SELECT * FROM user WHERE id_client = :id_client;');
+            $req->execute(array(
+                'id_client' => $id));
+            $donnees = $req->fetch();
+            $user = new User($donnees);
+            return $user;
+    }
+
     public function userExists($email) {
         $req = $this->_bdd->prepare('SELECT * FROM user WHERE email= :email');
             $req->execute(array(

@@ -29,57 +29,30 @@
 			require_once './methodes/classcategorie.php';
 			require_once './methodes/classcategorieManager.php';
 			require_once './controleur/categorie.php';
-			require_once "./methodes/article_class_management.php";
 			require_once "./methodes/article_class.php";
-			$usersquery = new ArticleManager($bdd);
-			$user = $usersquery->getListclasse($url);
-			
-			
+			require_once "./methodes/article_class_management.php";
+			require_once "./methodes/user.php";
+			require_once "./methodes/usermanager.php";
+			$categorie = new CategorieManager($bdd);
+			$cat = $categorie->getCategorie($url);
+			echo "<h1>".$cat->getNom()."</h1>";
+			$articlequery = new ArticleManager($bdd);
+			$article = $articlequery->getListclasse($url);			
+			$um = new UserManager($bdd);
 
-			// <!-- si la valeur dans mon url est la valeur alcool fort, alors on va appele tous les articles de la categorie alcool fort -->
-
-			
-				if ($url == "Alcools Forts"){
-							echo "<h1>$url</h1>";
-							foreach ($user as $key => $value) {
-							echo "<article>";
-							echo "<p> Catégorie: ".$value['id_categorie']."</p>
-							<h3>".$value['titre']."</h3>
-							<p>".$value['id_client']." le ".$value['date']."</p>
-							<p>".$value['contenu']."</p>";
-							if (isset($_SESSION['id'])){
-							echo "<button><a href='?page=modifier&value=".$value['id_article']."'>Modifier</a></button> <button><a href='?page=supprimer&value=".$value['id_article']."'>Supprimer</a></button>";
-				}
-				echo "</article>";
-			}							
-			 		}if ($url == "Vins"){
-							echo "<h1>$url</h1>";
-							foreach ($user as $key => $value) {
-							echo "<article>";
-							echo "<p> Catégorie: ".$value['id_categorie']."</p>
-							<h3>".$value['titre']."</h3>
-							<p>".$value['id_client']." le ".$value['date']."</p>
-							<p>".$value['contenu']."</p>";
-							if (isset($_SESSION['id'])){
-							echo "<button><a href='?page=modifier&value=".$value['id_article']."'>Modifier</a></button> <button><a href='?page=supprimer&value=".$value['id_article']."'>Supprimer</a></button>";
-				}
-				echo "</article>";
-			}	
-			 			}if ($url == "Champagne"){
-							echo "<h1>$url</h1>";
-							foreach ($user as $key => $value) {
-							echo "<article>";
-							echo "<p> Catégorie: ".$value['id_categorie']."</p>
-							<h3>".$value['titre']."</h3>
-							<p>".$value['id_client']." le ".$value['date']."</p>
-							<p>".$value['contenu']."</p>";
-							if (isset($_SESSION['id'])){
-							echo "<button><a href='?page=modifier&value=".$value['id_article']."'>Modifier</a></button> <button><a href='?page=supprimer&value=".$value['id_article']."'>Supprimer</a></button>";
+			foreach ($article as $art) {
+				$auteur = $um->getUserById($art->getId_client());
+				echo "<article>";
+				echo "<p> Catégorie: ".$cat->getNom()."</p>
+				<h3>".$art->getTitre()."</h3>
+				<p>".$auteur->getUser()." le ".$art->getDate()."</p>
+				<p>".$art->getContenu()."</p>";
+				if (isset($_SESSION['id'])){
+					echo "<button><a href='?page=modifier&value=".
+					getId_article()."'>Modifier</a></button> <button><a href='?page=supprimer&value=".$art->getId_article()."'>Supprimer</a></button>";
 				}
 				echo "</article>";
 			}
-			}	
-
 			?>
 				
 		

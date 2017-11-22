@@ -3,10 +3,16 @@
 		<hr color="black">
 		<p class="gras">Catégorie:</p>
 		<ul>
-			<li><a href="?page=categorie&valeur=Alcools Forts">- Alcools Forts</a></li>
-			<li><a href="?page=categorie&valeur=Vins">- Vins</a></li>
-			<li><a href="?page=categorie&valeur=Champagne">- Champagne</a></li>
-		</ul>
+<?php
+            require_once "./methodes/classcategorieManager.php";
+            require_once "./methodes/classcategorie.php";
+            $liscate = new CategorieManager($bdd);
+            $catego = $liscate->getListeCategories();
+                foreach ($catego as $cat){
+                    echo "<li><a href='?page=categorie&valeur=".$cat->getIdCategorie()."'>- ".$cat->getNom()."</li>";
+            }    
+?>
+</ul>
 		<hr color="black">
 		<p class="gras">Derniers articles parus:</p>
 		<?php

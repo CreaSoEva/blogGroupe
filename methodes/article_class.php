@@ -11,10 +11,12 @@ private $date;
 
 	public function __construct($donne)
 	{
-		$this->_id_categorie = ($donne['id_categorie']);
-		$this->_id_client = ($donne['id_client']);
-		$this->_titre = ($donne['titre ']);
-		$this->_contenu = ($donne['contenu']);
+		$this->id_article = ($donne['id_article']);
+		$this->id_categorie = ($donne['id_categorie']);
+		$this->id_client = ($donne['id_client']);
+		$this->titre = ($donne['titre']);
+		$this->contenu = ($donne['contenu']);
+		$this->date = ($donne['date']);
 	}
 
 
@@ -32,7 +34,7 @@ private $date;
 
 	public function getId_categorie()
 	{
-		return $this->id_article;
+		return $this->id_categorie;
 	}
 	public function setId_categorie($id_categorie)
 	{

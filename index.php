@@ -5,6 +5,7 @@
 	//Connexion base de données
 	try{
 		$bdd = new PDO('mysql:host=localhost;dbname=bloggroupe', 'root', '');
+		$bdd->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 	}
 	catch(Exception $e){
 		die('Erreur : '.$e->getMessage());

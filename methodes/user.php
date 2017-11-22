@@ -6,10 +6,10 @@ class User{
 	private $_email;
 
     public function __construct($donnees){
-        $this->_id_client = $donnees[0];
-        $this->_user = $donnees[1];
-        $this->_password = $donnees[2];
-        $this->_email = $donnees[3];
+        $this->_id_client = $donnees['id_client'];
+        $this->_user = $donnees['user'];
+        $this->_password = $donnees['password'];
+        $this->_email = $donnees['email'];
     }
     public function getIdClient(){
         return $this->_id_client;
