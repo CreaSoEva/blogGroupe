@@ -10,7 +10,7 @@
             $liscate = new CategorieManager($bdd);
             $catego = $liscate->getListeCategories();
                 foreach ($catego as $cat){
-                    echo "<li><a href='?page=categorie&valeur=".$cat->getIdCategorie()."'>- ".$cat->getNom()."</li>";
+                    echo "<li><a href='?page=categorie&valeur=".$cat->getIdCategorie()."'>- ".$cat->getNom()."</a></li>";
             }    
 ?>
 </ul>
@@ -51,9 +51,15 @@
 		<hr color="black">
 		<p class="gras">Catégorie:</p>
 		<ul>
-			<li><a href="#">- Alcool fort</a></li>
-			<li><a href="#">- Vin</a></li>
-			<li><a href="#">- Champagne</a></li>
+			<?php
+            require_once "./methodes/classcategorieManager.php";
+            require_once "./methodes/classcategorie.php";
+            $liscate = new CategorieManager($bdd);
+            $catego = $liscate->getListeCategories();
+                foreach ($catego as $cat){
+                    echo "<li><a href='?page=categorie&valeur=".$cat->getIdCategorie()."'>- ".$cat->getNom()."</a></li>";
+            }    
+		?>
 		</ul>
 		<hr color="black">
 		<p class="gras">Derniers articles parus:</p>
@@ -62,12 +68,12 @@
 			require_once "./methodes/article_class.php";
 			$usersquery1 = new ArticleManager($bdd);
 			$user1 = $usersquery1->getList();
-				foreach ($user1 as $key => $value){
-				if($key < 3){
+				foreach ($user1 as $value){
+				
 					echo "<ul>";
-					echo "<li>- ".$value['titre']." par ".$value['id_client']."</li>";
+					echo "<li><a href='?page=article&value=".$value->getId_article()."'>- ".$value->getTitre()." par ".$value->getId_client()."</a></li>";
 					echo "</ul>";
-				}
+				
 			}	
 		?>
 		<hr color="black">

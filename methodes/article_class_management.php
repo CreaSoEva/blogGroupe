@@ -59,7 +59,7 @@ public function getListclasse($url)
 
     while ($donne = $q->fetch())
     {
-      $art[] =new Article($donne);
+      $art[] = new Article($donne);
     }
 
     return $art;
