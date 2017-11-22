@@ -83,6 +83,11 @@ footer{
 	border: solid 1px black;
 	padding: 1%;
 	text-align: center;
+	margin-top: 2%;
+}
+#form{
+	text-align: center;
+	margin-top: 2%;
 }
 .disparait{
 	display: none;
@@ -110,7 +115,6 @@ td{
 	color: blue;
 	margin-left: 70%;
 }
-
 @media screen and (max-width: 1600px) {
  aside{
 	position: relative;

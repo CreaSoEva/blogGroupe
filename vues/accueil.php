@@ -40,7 +40,6 @@
 				echo "<a href='?page=article&value=".$value['id_article']."'><span class='commentaire'>Commentaires<span></a>";
 				echo "</article>";
 			}
-			
 			?>
 	</section>
 	<!--Fin de section -->

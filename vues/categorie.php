@@ -78,6 +78,19 @@
 				}
 				echo "</article>";
 			}
+			}if ($url == "Bieres"){
+							echo "<h1>$url</h1>";
+							foreach ($user as $key => $value) {
+							echo "<article>";
+							echo "<p> Catégorie: ".$value['id_categorie']."</p>
+							<h3>".$value['titre']."</h3>
+							<p>".$value['id_client']." le ".$value['date']."</p>
+							<p>".$value['contenu']."</p>";
+							if (isset($_SESSION['id'])){
+							echo "<button><a href='?page=modifier&value=".$value['id_article']."'>Modifier</a></button> <button><a href='?page=supprimer&value=".$value['id_article']."'>Supprimer</a></button>";
+				}
+				echo "</article>";
+			}
 			}	
 
 			?>

@@ -13,7 +13,7 @@ class CategorieManager{
 			$req = $this->_bdd->prepare('SELECT * FROM `bloggroupe`.`categorie`;');
 			$req->execute();
 			while($donnees = $req->fetch()){
-				$categories[] = new Categorie($donnees);
+				$categories[] = $donnees;
 			}
 			return $categories;
 	}

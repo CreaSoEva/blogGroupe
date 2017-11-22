@@ -2,11 +2,17 @@
 		<p class="gras"><a href="?page=creation">Écrire un nouvel article</a></p>
 		<hr color="black">
 		<p class="gras">Catégorie:</p>
-		<ul>
-			<li><a href="?page=categorie&valeur=Alcools Forts">- Alcools Forts</a></li>
-			<li><a href="?page=categorie&valeur=Vins">- Vins</a></li>
-			<li><a href="?page=categorie&valeur=Champagne">- Champagne</a></li>
-		</ul>
+		<?php
+			require_once "./methodes/classcategorieManager.php";
+			require_once "./methodes/classcategorie.php";
+			$liscate = new CategorieManager($bdd);
+			$catego = $liscate->getListeCategories();
+				foreach ($catego as $key => $value){
+					echo "<ul>";
+					echo "<li><a href='?page=categorie&valeur=".$value['nom']."'>- ".$value['nom']."</li>";
+					echo "</ul>";
+			}	
+		?>
 		<hr color="black">
 		<p class="gras">Derniers articles parus:</p>
 		<?php
@@ -17,7 +23,7 @@
 				foreach ($user1 as $key => $value){
 				if($key < 3){
 					echo "<ul>";
-					echo "<li>- ".$value['titre']." par ".$value['id_client']."</li>";
+					echo "<li><a href='?page=article&value=".$value['id_article']."'>- ".$value['titre']." par ".$value['id_client']."</a></li>";
 					echo "</ul>";
 				}
 			}	
