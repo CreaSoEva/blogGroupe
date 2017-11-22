@@ -35,7 +35,7 @@
 				<p>".$value['id_client']." le ".$value['date']."</p>
 				<p>".$value['contenu']."</p>";
 				if (isset($_SESSION['id'])){
-					echo "<button><a href='?page=modifier&value=".$value['id_article']."'>Modifier</a></button><button><a href='?page=supprimer&value=".$value['id_article']."'>Supprimer</a></button>";
+					echo "<button><a href='?page=modifier&value=".$value['id_article']."'>Modifier</a></button><button class='supprart' data-id=".$value['id_article'].">Supprimer</button>";
 				}
 				echo "<a href='?page=article&value=".$value['id_article']."'><span class='commentaire'>Commentaires<span></a>";
 				echo "</article>";

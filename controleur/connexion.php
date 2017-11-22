@@ -1,10 +1,10 @@
 <?php
 //on vérifie si les données sont bien renseigner
-if (isset($_POST['user']) && isset($_POST['password'])) {
+if (isset($_POST['email']) && isset($_POST['password'])) {
 	require_once "./methodes/usermanager.php";
 	require_once "./methodes/user.php";
 	$usersquery = new UserManager($bdd);
-	$user = $usersquery->getUser($_POST['user'], $_POST['password']);
+	$user = $usersquery->getUser($_POST['email'], $_POST['password']);
 	// si les données sont juste
 	if($user){
 		$_SESSION['id'] = $user->getIdClient();
