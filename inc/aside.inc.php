@@ -1,6 +1,13 @@
 <aside id="asideconnec" class="asidegrand">
+		<?php
+			if (isset($_SESSION['id'])){
+		?>
 		<p class="gras"><a href="?page=creation">Écrire un nouvel article</a></p>
 		<hr color="black">
+
+		<?php
+			}
+		?>
 		<p class="gras">Catégorie:</p>
 
 		<ul>
