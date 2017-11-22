@@ -44,12 +44,16 @@
 				<p>".$auteur->getUser()." le ".$art->getDate()."</p>
 				<p>".$art->getContenu()."</p>";
 				if (isset($_SESSION['id'])){
+<<<<<<< HEAD
 					echo "<button><a href='?page=modifier&value=".
 					getId_article()."'>Modifier</a></button> <button><a href='?page=supprimer&value=".$art->getId_article()."'>Supprimer</a></button>";
+=======
+					echo "<button><a href='?page=modifier&value=".$value['id_article']."'>Modifier</a></button><button class='supprart' data-id=".$value['id_article'].">Supprimer</button>";
+>>>>>>> 66589a71d4c866c3a7a3f6fea8ffcee805db2123
 				}
+				echo "<a href='?page=article&value=".$value['id_article']."'><span class='commentaire'>Commentaires<span></a>";
 				echo "</article>";
 			}
-			
 			?>
 	</section>
 	<!--Fin de section -->

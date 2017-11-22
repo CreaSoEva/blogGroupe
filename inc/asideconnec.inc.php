@@ -2,6 +2,7 @@
 		<p class="gras"><a href="?page=creation">Écrire un nouvel article</a></p>
 		<hr color="black">
 		<p class="gras">Catégorie:</p>
+<<<<<<< HEAD
 		<ul>
 <?php
             require_once "./methodes/classcategorieManager.php";
@@ -13,6 +14,19 @@
             }    
 ?>
 </ul>
+=======
+		<?php
+			require_once "./methodes/classcategorieManager.php";
+			require_once "./methodes/classcategorie.php";
+			$liscate = new CategorieManager($bdd);
+			$catego = $liscate->getListeCategories();
+				foreach ($catego as $key => $value){
+					echo "<ul>";
+					echo "<li><a href='?page=categorie&valeur=".$value['nom']."'>- ".$value['nom']."</li>";
+					echo "</ul>";
+			}	
+		?>
+>>>>>>> 66589a71d4c866c3a7a3f6fea8ffcee805db2123
 		<hr color="black">
 		<p class="gras">Derniers articles parus:</p>
 		<?php
@@ -23,7 +37,7 @@
 				foreach ($user1 as $key => $value){
 				if($key < 3){
 					echo "<ul>";
-					echo "<li>- ".$value['titre']." par ".$value['id_client']."</li>";
+					echo "<li><a href='?page=article&value=".$value['id_article']."'>- ".$value['titre']." par ".$value['id_client']."</a></li>";
 					echo "</ul>";
 				}
 			}	
@@ -55,11 +69,19 @@
 		</ul>
 		<hr color="black">
 		<p class="gras">Derniers articles parus:</p>
-		<ul>
-			<li><a href="#">- Mercurey par Maxime</a></li>
-			<li><a href="#">- Lanson par Sébastien</a></li>
-			<li><a href="#">- Whisky par Sophie</a></li>
-		</ul>
+		<?php
+			require_once "./methodes/article_class_management.php";
+			require_once "./methodes/article_class.php";
+			$usersquery1 = new ArticleManager($bdd);
+			$user1 = $usersquery1->getList();
+				foreach ($user1 as $key => $value){
+				if($key < 3){
+					echo "<ul>";
+					echo "<li>- ".$value['titre']." par ".$value['id_client']."</li>";
+					echo "</ul>";
+				}
+			}	
+		?>
 		<hr color="black">
 		<p class="gras">Derniers commentaires:</p>
 		<ul>

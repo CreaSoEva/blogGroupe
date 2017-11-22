@@ -11,12 +11,19 @@ private $date;
 
 	public function __construct($donne)
 	{
+<<<<<<< HEAD
 		$this->id_article = ($donne['id_article']);
 		$this->id_categorie = ($donne['id_categorie']);
 		$this->id_client = ($donne['id_client']);
 		$this->titre = ($donne['titre']);
 		$this->contenu = ($donne['contenu']);
 		$this->date = ($donne['date']);
+=======
+		$this->_id_categorie = ($donne['id_categorie']);
+		$this->_id_client = ($donne['id_client']);
+		$this->_titre = ($donne['titre']);
+		$this->_contenu = ($donne['contenu']);
+>>>>>>> 66589a71d4c866c3a7a3f6fea8ffcee805db2123
 	}
 
 

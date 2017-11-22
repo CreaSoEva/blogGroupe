@@ -12,4 +12,9 @@ $(document).ready(function(){
 			document.location="?page=bannir&id="+$(this).attr("data-id")+"&user="+$(this).attr("data-user")+"&email="+$(this).attr("data-mail");
 	}
 	});
+	$(".supprart").click(function(){
+		if(confirm("Voulez vous vraiment supprimé l'article?")){
+			document.location="?page=supprimer&id="+$(this).attr("data-id");
+	}
+	});
 });

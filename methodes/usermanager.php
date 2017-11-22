@@ -5,11 +5,11 @@ class UserManager{
     {
         $this->_bdd = $_bdd;
     }
-    public function getUser($user,$password){
+    public function getUser($email,$password){
         $passwordmd5 = MD5($password);
-            $req = $this->_bdd->prepare('SELECT * FROM user WHERE user = :user AND password = :password');
+            $req = $this->_bdd->prepare('SELECT * FROM user WHERE email = :email AND password = :password');
             $req->execute(array(
-                'user' => $user,
+                'email' => $email,
                 'password' => $passwordmd5));
             $donnees = $req->fetch();
             $user = new User($donnees);

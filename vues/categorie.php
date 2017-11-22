@@ -40,6 +40,7 @@
 			$article = $articlequery->getListclasse($url);			
 			$um = new UserManager($bdd);
 
+<<<<<<< HEAD
 			foreach ($article as $art) {
 				$auteur = $um->getUserById($art->getId_client());
 				echo "<article>";
@@ -53,6 +54,63 @@
 				}
 				echo "</article>";
 			}
+=======
+			
+				if ($url == "Alcools Forts"){
+							echo "<h1>$url</h1>";
+							foreach ($user as $key => $value) {
+							echo "<article>";
+							echo "<p> Catégorie: ".$value['id_categorie']."</p>
+							<h3>".$value['titre']."</h3>
+							<p>".$value['id_client']." le ".$value['date']."</p>
+							<p>".$value['contenu']."</p>";
+							if (isset($_SESSION['id'])){
+							echo "<button><a href='?page=modifier&value=".$value['id_article']."'>Modifier</a></button><button class='supprart' data-id=".$value['id_article'].">Supprimer</button>";
+				}
+				echo "</article>";
+			}							
+			 		}if ($url == "Vins"){
+							echo "<h1>$url</h1>";
+							foreach ($user as $key => $value) {
+							echo "<article>";
+							echo "<p> Catégorie: ".$value['id_categorie']."</p>
+							<h3>".$value['titre']."</h3>
+							<p>".$value['id_client']." le ".$value['date']."</p>
+							<p>".$value['contenu']."</p>";
+							if (isset($_SESSION['id'])){
+							echo "<button><a href='?page=modifier&value=".$value['id_article']."'>Modifier</a></button> <button><a href='?page=supprimer&value=".$value['id_article']."'>Supprimer</a></button>";
+				}
+				echo "</article>";
+			}	
+			 			}if ($url == "Champagne"){
+							echo "<h1>$url</h1>";
+							foreach ($user as $key => $value) {
+							echo "<article>";
+							echo "<p> Catégorie: ".$value['id_categorie']."</p>
+							<h3>".$value['titre']."</h3>
+							<p>".$value['id_client']." le ".$value['date']."</p>
+							<p>".$value['contenu']."</p>";
+							if (isset($_SESSION['id'])){
+							echo "<button><a href='?page=modifier&value=".$value['id_article']."'>Modifier</a></button> <button><a href='?page=supprimer&value=".$value['id_article']."'>Supprimer</a></button>";
+				}
+				echo "</article>";
+			}
+			}if ($url == "Bieres"){
+							echo "<h1>$url</h1>";
+							foreach ($user as $key => $value) {
+							echo "<article>";
+							echo "<p> Catégorie: ".$value['id_categorie']."</p>
+							<h3>".$value['titre']."</h3>
+							<p>".$value['id_client']." le ".$value['date']."</p>
+							<p>".$value['contenu']."</p>";
+							if (isset($_SESSION['id'])){
+							echo "<button><a href='?page=modifier&value=".$value['id_article']."'>Modifier</a></button> <button><a href='?page=supprimer&value=".$value['id_article']."'>Supprimer</a></button>";
+				}
+				echo "</article>";
+			}
+			}	
+
+>>>>>>> 66589a71d4c866c3a7a3f6fea8ffcee805db2123
 			?>
 				
 		

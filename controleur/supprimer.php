@@ -1,6 +1,6 @@
 <?php 
 if (isset($_SESSION['id'])) {
-	$art = $_GET['value'];
+	$art = $_GET['id'];
 	require_once "./methodes/article_class_management.php";
 	require_once "./methodes/article_class.php";
 	$usersquery = new ArticleManager($bdd);
