@@ -9,10 +9,6 @@
 </head>
 <body>
 <!-- Header et aside -->
-<?php 
-		require_once "./inc/header.inc.php";
-		require_once "./inc/aside.inc.php";
-?>
 	<!-- Header et aside -->
 	<!-- Section -->
 	<section>
@@ -31,8 +27,6 @@
 		$user1 = $_POST["nom"];
 		$password = MD5($_POST["motdepasse"]);
 		$email= $_POST["mail"];
-		require_once "./methodes/usermanager.php";
-		require_once "./methodes/user.php";
 		$usersquery = new UserManager($bdd);
 		$user = $usersquery->userExists($email);
 			if ($user == false) {
@@ -44,10 +38,5 @@
 		}
 ?>
 	<!--Fin de section -->
-	<?php 
-	require_once "./inc/footer.inc.php";
-?>
-
-
 </body>
 </html>

@@ -10,34 +10,12 @@
 
 <body>
 <!-- Header et aside -->
-<?php 
-		require_once "./inc/header.inc.php";
-		require_once "./inc/aside.inc.php";
-?>
+
 	<!-- Header et aside -->
 	<!-- Section -->
 	<section>
 			<h1>Article</h1>
 			<?php
-			$id = $_GET['value']; 
-			require_once "./methodes/article_class_management.php";
-			require_once "./methodes/article_class.php";
-			require_once "./methodes/user.php";
-			require_once "./methodes/usermanager.php";
-			require_once "./methodes/commentaire_class.php";
-			require_once "./methodes/commentaire_class_management.php";
-			$artisolo = new ArticleManager($bdd);
-			$article = $artisolo->get($id);
-			$userid = $article['id_client'];
-			$url = $article['id_categorie'];
-			$categorie = new CategorieManager($bdd);
-			$cat = $categorie->getCategorie($url);	
-			$um = new UserManager($bdd);
-			$auteur=$um->getUserById($userid);
-			//commentaire
-			$commentaire = new CommentaireManager($bdd);
-			$affichecommentaire = $commentaire->getListclass($id);
-
 			echo "<article>";
 			echo "<p> Catégorie: ".$cat->getNom()."</p>
 				<h3>".$article['titre']."</h3>
@@ -73,10 +51,5 @@
 			?>
 	</section>
 	<!--Fin de section -->
-	<?php 
-	require_once "./inc/footer.inc.php";
-?>
-
-
 </body>
 </html>

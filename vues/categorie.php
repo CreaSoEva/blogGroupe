@@ -9,28 +9,9 @@
 </head>
 
 <body>
-	<!-- Header -->
-<?php 
-		require_once "./inc/header.inc.php";
-		require_once "./inc/aside.inc.php";
-?>
-	<!-- Header et aside -->
 	<!-- Section -->
-	<section>
-		
-			<?php	
-			$url = $_GET['valeur'];
-			
-			require_once "./methodes/article_class_management.php";
-			require_once "./methodes/user.php";
-			require_once "./methodes/usermanager.php";
-			$categorie = new CategorieManager($bdd);
-			$cat = $categorie->getCategorie($url);
-			echo "<h1>".$cat->getNom()."</h1>";
-			$articlequery = new ArticleManager($bdd);
-			$article = $articlequery->getListclasse($url);			
-			$um = new UserManager($bdd);	
-
+	<section>	
+			<?php		
 			// <!-- si la valeur dans mon url est la valeur alcool fort, alors on va appele tous les articles de la categorie alcool fort -->
 
 			foreach ($article as $art) {

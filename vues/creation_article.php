@@ -11,20 +11,12 @@ if (isset($_SESSION['id'])) {
 	<script type="text/javascript" src="./js/script.js"></script>
 </head>
 <body>
-	<!-- Header -->
-<?php 
-		require_once "./inc/header.inc.php";
-		require_once "./inc/aside.inc.php";
-?>
-	<!-- Fin de aside -->
 	<!-- Section -->
 	<section>
 		<form class="form" method="POST">
 			<label>Titre:</label><br/>
 			<input type="text" name="titre"><br/><br/>
 			<?php
-			require_once './methodes/classcategorie.php';
-			require_once './methodes/classcategorieManager.php'; 
 			$art = new CategorieManager($bdd);
 			$listes=$art->getListeCategories();
 			?>
@@ -39,33 +31,15 @@ if (isset($_SESSION['id'])) {
 			<textarea name="contenu"></textarea><br/><br/>
 			<input type="submit" name="publier" value="Publier">
 		</form>
-
 <?php
 if (isset($_POST["categorie"])) {
-	require_once './methodes/article_class.php';
-	require_once './methodes/article_class_management.php';
 	$art = new ArticleManager($bdd);
 	$art->add();
 	header("Location: index.php");
 }
-
-
-
 ?>
-
-
 	</section>
-
-
-
-
 	<!--Fin de section -->
-<?php 
-	
-	require_once "./inc/footer.inc.php";
-?>
-
-
 </body>
 </html>
 <?php
@@ -73,5 +47,3 @@ if (isset($_POST["categorie"])) {
 	header("Location: ./index.php");
 }
  ?>
-
-

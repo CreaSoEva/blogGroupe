@@ -10,9 +10,24 @@
 	catch(Exception $e){
 		die('Erreur : '.$e->getMessage());
 	}
+	//aside header
+	require_once "./inc/header.inc.php";
+	require_once "./inc/aside.inc.php";
+	// categorie 1/4
+	require_once "./methodes/classcategorie.php";
+	require_once "./methodes/classcategorieManager.php";
+	// article 2/4
+	require_once "./methodes/article_class.php";
+	require_once "./methodes/article_class_management.php";
+	// user 3/4
+	require_once "./methodes/user.php";
+	require_once "./methodes/usermanager.php";
+	//commentaire 4/4
+	require_once "./methodes/commentaire_class.php";
+	require_once "./methodes/commentaire_class_management.php";
 	//Affichage sur la page
 	if (empty($_GET["page"])){
-		require_once "vues/accueil.php";
+		require_once "controleur/accueil.php";
 	}else{
 		if ($_GET['page'] == 'connexion') {
 				require_once "controleur/connexion.php";
@@ -45,4 +60,5 @@
 		require_once "controleur/bannir.php";
 		}
 	}
+	require_once "./inc/footer.inc.php";
 ?>

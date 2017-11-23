@@ -11,12 +11,6 @@ if ($_SESSION['id'] == 1){
 	<script type="text/javascript" src="../js/script.js"></script>
 </head>
 <body>
-<!-- Header et aside -->
-<?php 
-		require_once "./inc/header.inc.php";
-		require_once "./inc/aside.inc.php";
-?>
-	<!-- Header et aside -->
 	<!-- Section -->
 	<section>
 <?php
@@ -44,9 +38,6 @@ if ($_SESSION['id'] == 1){
 ?>
 	</section>
 	<!--Fin de section -->
-	<?php 
-	require_once "./inc/footer.inc.php";
-?>
 </body>
 </html>
 <?php

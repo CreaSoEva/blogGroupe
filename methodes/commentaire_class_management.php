@@ -19,6 +19,15 @@ class CommentaireManager{
             return $article;
 	}
 
+    public function compt($id){
+         $id = (int) $id;
+
+    $q = $this->_bdd->query('SELECT COUNT(*) FROM commentaire WHERE id_article = '.$id);
+    $comdonnees = $q->fetch();
+
+    return $comdonnees;
+    }
+
 	public function delete($art)
 	{
 	    $this->_bdd->exec('DELETE FROM commentaire WHERE id_commentaire = '.$art);

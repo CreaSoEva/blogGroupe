@@ -11,12 +11,6 @@ if (isset($_SESSION['id'])) {
 	<script type="text/javascript" src="./js/script.js"></script>
 </head>
 <body>
-	<!-- Header -->
-<?php 
-		require_once "./inc/header.inc.php";
-		require_once "./inc/aside.inc.php";
-?>
-	<!-- Fin de aside -->
 	<!-- Section -->
 	<section>
 		<?php
@@ -43,21 +37,12 @@ if (isset($_POST["titre"])) {
 	$idmodif = $_SESSION['art'];
 	$titremodif = $_POST["titre"];
 	$contenumodif = $_POST["contenu"];
-	require_once './methodes/article_class.php';
-	require_once './methodes/article_class_management.php';
 	$usersquery = new ArticleManager($bdd);
-	$user = $usersquery->update($titremodif, $contenumodif, $idmodif, $bdd);
-	header("Location: index.php");
-}
+	$user = $usersquery->update($titremodif, $contenumodif, $idmodif, $bdd);}
 
 ?>
-
 	</section>
 	<!--Fin de section -->
-<?php 
-	
-	require_once "./inc/footer.inc.php";
-?>
 </body>
 </html>
 <?php

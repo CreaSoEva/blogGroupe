@@ -1,7 +1,8 @@
 <?php 
-if (isset($_SESSION['id'])) {
+	$categorie = new CategorieManager($bdd);			
+	$articlequery = new ArticleManager($bdd);
+	$article = $articlequery->getList();			
+	$um = new UserManager($bdd);
+	$compteur = new CommentaireManager($bdd);
 	require_once "./vues/accueil.php";
-}else{
-	require_once "./vues/accueil.php";
-}
 ?>

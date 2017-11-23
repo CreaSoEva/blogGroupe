@@ -115,6 +115,12 @@ td{
 	color: blue;
 	margin-left: 70%;
 }
+#nombrecompteur{
+	color: #660033;
+}
+
+
+
 @media screen and (max-width: 1600px) {
  aside{
 	position: relative;
