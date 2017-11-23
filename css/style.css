@@ -137,6 +137,10 @@ td{
 	display: block;
 	float: right;
 }
+#asideconnecmini{
+	margin-top: 10%;
+	width: 80%;
+}
 }
 
 
@@ -162,6 +166,10 @@ footer{
 }
 .imageheaderP{
 	display: block;
-	width: auto;
+	max-width: 100%;
+}
+#asideconnecmini{
+	margin-top: 18%;
+	width: 80%;
 }
 }
