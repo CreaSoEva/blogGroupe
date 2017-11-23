@@ -29,7 +29,7 @@ class ArticleManager{
 	{
 	        $id = (int) $id;
 
-    $q = $this->_bdd->query('SELECT id_article, id_categorie, id_client, titre, contenu, date FROM article WHERE id_article = '.$id);
+    $q = $this->_bdd->query('SELECT * FROM article WHERE id_article = '.$id);
     $donne = $q->fetch();
 
     return $donne;
@@ -39,7 +39,7 @@ class ArticleManager{
 	{
 	        $art = [];
 
-    $q = $this->_bdd->query('SELECT * FROM article ORDER BY date DESC LIMIT 3');
+    $q = $this->_bdd->query('SELECT * FROM article ORDER BY date DESC');
 
     while ($donne = $q->fetch())
     {
@@ -54,7 +54,7 @@ public function getListclasse($url)
 	{
 	        $art = [];
 
-    $q = $this->_bdd->prepare("SELECT * FROM article WHERE id_categorie=? ORDER BY date DESC LIMIT 6" );
+    $q = $this->_bdd->prepare("SELECT * FROM article WHERE id_categorie=? ORDER BY date DESC " );
     $q->execute(array($url));
 
     while ($donne = $q->fetch())

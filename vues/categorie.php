@@ -41,7 +41,7 @@
 				<p>".$auteur->getUser()." le ".$art->getDate()."</p>
 				<p>".$art->getContenu()."</p>";
 				if (isset($_SESSION['id'])){
-					echo "<button><a href='?page=modifier&value=".$art->getId_article()."'>Modifier</a></button><button><a href='?page=supprimer&value=".$art->getId_article()."'>Supprimer</a></button>";
+					echo "<button><a href='?page=modifier&value=".$art->getId_article()."'>Modifier</a></button><button data-id=".$art->getId_article()." class='supprart'>Supprimer</button>";
 				}
 				echo "<a href='?page=article&value=".$art->getId_article()."'><span class='commentaire'>Commentaires<span></a>";
 				echo "</article>";
