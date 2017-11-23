@@ -1,10 +1,11 @@
 <aside id="asideconnec" class="asidegrand">
 		<?php
 			if (isset($_SESSION['id'])){
-		?>
+		?>	
 		<p class="gras"><a href="?page=creation">Écrire un nouvel article</a></p>
 		<hr color="black">
-
+		<p><a href="?page=listemembre">Liste des membres</p></a>
+		<hr color="black">
 		<?php
 			}
 		?>
@@ -43,19 +44,7 @@
 					
 			}	
 		?> 
-		<hr color="black">
-		<p class="gras">Derniers commentaires:</p>
-		<ul>
-			<li><a href="#">- Sophie sur Lanson</a></li>
-			<li><a href="#">- Maxime sur Whisky</a></li>
-		</ul>
-		<hr color="black">
-		<p class="gras">Mes articles:</p>
-		<ul>
-			<li><a href="#">- Whisky</a></li>
-		</ul>
-		<hr color="black">
-		<p><a href="?page=listemembre">Liste des membres</p>
+
 </aside>
 
 <img src="./image/menu.png" id="menuconnecmini" class="boutonmenu">
@@ -95,15 +84,4 @@
 					
 			}		
 		?>
-		<hr color="black">
-		<p class="gras">Derniers commentaires:</p>
-		<ul>
-			<li><a href="#">- Sophie sur Lanson</a></li>
-			<li><a href="#">- Maxime sur Whisky</a></li>
-		</ul>
-		<hr color="black">
-		<p class="gras">Mes articles:</p>
-		<ul>
-			<li><a href="#">- Whisky</a></li>
-		</ul>
 </aside>
