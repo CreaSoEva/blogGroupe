@@ -24,9 +24,10 @@
 	</section>
 	<?php
 	if (isset($_POST["nom"]) && isset($_POST["motdepasse"]) && isset($_POST["mail"])){
-		$user1 = $_POST["nom"];
-		$password = MD5($_POST["motdepasse"]);
-		$email= $_POST["mail"];
+		if (filter_var($_POST["mail"], FILTER_VALIDATE_EMAIL)) {
+		$user1 = htmlspecialchars($_POST["nom"]);
+		$password = htmlspecialchars(MD5($_POST["motdepasse"]));
+		$email= htmlspecialchars($_POST["mail"]);
 		$usersquery = new UserManager($bdd);
 		$user = $usersquery->userExists($email);
 			if ($user == false) {
@@ -36,6 +37,8 @@
 				echo "Email déjà renseigné";
 			}
 		}
+		
+	}
 ?>
 	<!--Fin de section -->
 </body>

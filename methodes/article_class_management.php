@@ -9,10 +9,10 @@ class ArticleManager{
 	{
     $q = $this->_bdd->prepare('INSERT INTO article(id_categorie, id_client, titre, contenu) VALUES(:id_categorie, :id_client, :titre, :contenu)');
     $q->execute(array(
-			'id_categorie' => $_POST["categorie"],
-			'id_client' => $_SESSION['id'],
-			'titre' => $_POST["titre"],
-			'contenu' => $_POST["contenu"]
+			'id_categorie' => htmlspecialchars($_POST["categorie"]),
+			'id_client' => htmlspecialchars($_SESSION['id']),
+			'titre' => htmlspecialchars($_POST["titre"]),
+			'contenu' => htmlspecialchars($_POST["contenu"])
 			));
 
      		$donne = $q->fetch();

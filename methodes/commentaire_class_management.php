@@ -10,8 +10,8 @@ class CommentaireManager{
     $q = $this->_bdd->prepare('INSERT INTO commentaire( id_article, auteur, contenu) VALUES(:id_article, :auteur, :contenu)');
     $q->execute(array(
 			'id_article' => $id,
-			'auteur' => $_SESSION['nom'],
-			'contenu' => $_POST["contenu"]
+			'auteur' => htmlspecialchars($_SESSION['nom']),
+			'contenu' => htmlspecialchars($_POST["contenu"])
 			));
 
      		$comdonnees = $q->fetch();

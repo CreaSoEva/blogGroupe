@@ -4,7 +4,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 	require_once "./methodes/usermanager.php";
 	require_once "./methodes/user.php";
 	$usersquery = new UserManager($bdd);
-	$user = $usersquery->getUser($_POST['email'], $_POST['password']);
+	$user = $usersquery->getUser(htmlspecialchars($_POST['email']), htmlspecialchars($_POST['password']));
 	// si les données sont juste
 	if($user){
 		$_SESSION['id'] = $user->getIdClient();
