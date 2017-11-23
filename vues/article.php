@@ -22,12 +22,22 @@
 			$id = $_GET['value']; 
 			require_once "./methodes/article_class_management.php";
 			require_once "./methodes/article_class.php";
+			require_once "./methodes/user.php";
+			require_once "./methodes/usermanager.php";
 			$artisolo = new ArticleManager($bdd);
 			$article = $artisolo->get($id);
+			$userid = $article['id_client'];
+			$url = $article['id_categorie'];
+			$categorie = new CategorieManager($bdd);
+			$cat = $categorie->getCategorie($url);	
+			$um = new UserManager($bdd);
+			$auteur=$um->getUserById($userid);
+
+
 			echo "<article>";
-			echo "<p> Catégorie: ".$article['id_categorie']."</p>
+			echo "<p> Catégorie: ".$cat->getNom()."</p>
 				<h3>".$article['titre']."</h3>
-				<p>".$article['id_client']." le ".$article['date']."</p>
+				<p>".$auteur->getUser()." le ".$article['date']."</p>
 				<p>".$article['contenu']."</p>";
 				echo "</article>";
 				echo "<form id='form' method='POST'>";
