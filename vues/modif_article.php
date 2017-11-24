@@ -17,7 +17,7 @@ if (isset($_SESSION['id'])){
 	<!-- Section -->
 	<section>
 		<?php
-
+		$_SESSION['merde'] = "merde";
 		?>
 		<form class="form" method="POST">
 			<label>Titre:</label><br/>
@@ -30,7 +30,6 @@ if (isset($_SESSION['id'])){
 
 <?php
 if (isset($_POST["titre"])) {
-	$_SESSION['merde'] = "merde";
 	$idmodif = $id;
 	$titremodif = $_POST["titre"];
 	$contenumodif = $_POST["contenu"];
