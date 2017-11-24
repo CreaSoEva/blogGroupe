@@ -4,7 +4,7 @@
 		<?php
 			if (isset($_SESSION['id'])){
 		?>
-		<p>Bonjour <span><?php echo $_SESSION['nom']; ?></span><br/><br/>
+		<p>Bonjour <br/><span><?php echo $_SESSION['nom']; ?></span><br/><br/>
 		<button><a href="?page=deconnexion">Déconnexion</a></button></p>
 		<?php
 			}else{
