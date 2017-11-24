@@ -4,9 +4,15 @@
 		?>	
 		<p class="gras"><a href="?page=creation">Écrire un nouvel article</a></p>
 		<hr color="black">
+		<?php
+			}
+			if (isset($_SESSION['id'])){
+				if ($_SESSION['id'] == 1) {
+		?>	
 		<p><a href="?page=listemembre">Liste des membres</p></a>
 		<hr color="black">
 		<?php
+				}
 			}
 		?>
 		<p class="gras">Catégorie:</p>
