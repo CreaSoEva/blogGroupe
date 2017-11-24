@@ -69,7 +69,8 @@ public function getListclasse($url)
 
 	public function update($titremodif, $contenumodif, $idmodif, $bdd)
 	{
-    $bdd->exec(" UPDATE article SET titre = '$titremodif', contenu = '$contenumodif'  WHERE id_article = $idmodif ");
+	$bdd->exec(" UPDATE article SET titre = '$titremodif' WHERE id_article = $idmodif");
+	$bdd->exec(" UPDATE article SET contenu = '$contenumodif' WHERE id_article = $idmodif");
     }
 
 	public function setBdd(PDO $bdd)
