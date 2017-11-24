@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+if (isset($_SESSION['merde'])) {
+	unset($_SESSION['merde']);
+}
+?>
 <html>
 <head>
 	<title>Blog  des alcooliques</title>

@@ -1,6 +1,9 @@
 <?php 
-if (isset($_SESSION['id'])) {
-	?>
+if (isset($_SESSION['id'])){
+	if (isset($_SESSION['merde'])) {
+		header("Location: ./index.php");
+	}
+?>
 	<!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +30,7 @@ if (isset($_SESSION['id'])) {
 
 <?php
 if (isset($_POST["titre"])) {
+	$_SESSION['merde'] = "merde";
 	$idmodif = $id;
 	$titremodif = $_POST["titre"];
 	$contenumodif = $_POST["contenu"];

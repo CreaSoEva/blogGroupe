@@ -4,5 +4,4 @@
 	}else{
 		require_once "./vues/inscription.php";
 	}
-
 ?>

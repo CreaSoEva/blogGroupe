@@ -11,11 +11,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 		$_SESSION['nom'] = $user->getUser();
 		$_SESSION['email'] = $user->getEmail();
 		header("Location: index.php");
-	}else{
-		echo "Les champs renseignés ne sont pas bons";
 	}
 }else{
 	echo "Vous n'avez pas remplis les champs";
 }
-	
 ?>
